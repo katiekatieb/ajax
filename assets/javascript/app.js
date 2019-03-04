@@ -40,6 +40,7 @@ $(document.body).on("click", "button", function() {
       var animatedImageUrl = response.data[i].images.original.url
       console.log(stillImageUrl)
       var image = $("<img>");
+      var rating = response.data[i].rating;
       image.attr("src", stillImageUrl);
       image.attr("alt", "'" + animal + " image'");
       image.attr("data-state", "still");
@@ -49,6 +50,7 @@ $(document.body).on("click", "button", function() {
 
 
       $("#images").append(image);
+      $('#images').append('<p>RATING: ' + rating + '</p>')
 
     };
   });
